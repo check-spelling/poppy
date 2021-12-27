@@ -1,0 +1,60 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-excludes
+(?:^|/)(?i)COPYRIGHT
+(?:^|/)(?i)LICEN[CS]E
+(?:^|/)go\.sum$
+(?:^|/)package(?:-lock|)\.json$
+(?:^|/)vendor/
+ignore$
+\.ai$
+\.avi$
+\.bmp$
+\.bz2$
+\.crt$
+\.DS_Store$
+\.eot$
+\.gif$
+\.gitattributes$
+\.graffle$
+\.gz$
+\.icns$
+\.ico$
+\.jar$
+\.jpe?g$
+\.key$
+\.lock$
+\.map$
+\.min\..
+\.mod$
+\.mp[34]$
+\.ocf$
+\.otf$
+\.pdf$
+\.pem$
+\.png$
+\.psd$
+\.svg$
+\.ttf$
+\.wav$
+\.woff2?$
+\.zip$
+^\.github/
+^\Qdocs/available_optics.ipynb\E$
+^\Qdocs/example_flower_opd.fits\E$
+^\Qdocs/figures/README Figure.ipynb\E$
+^\Qdocs/figures/wfe/WFE Documentation Figures.ipynb\E$
+^\Qdocs/requirements.txt\E$
+^\Qdocs/sign_conventions_for_coordinates_and_phase.ipynb\E$
+^\Qnotebooks/Fresnel_Propagation_Demo.ipynb\E$
+^\Qnotebooks/MatrixFTCoronagraph_demo.ipynb\E$
+^\Qnotebooks/Physical Units Demo.ipynb\E$
+^\Qnotebooks/POPPY Examples.ipynb\E$
+^\Qnotebooks/POPPY_tutorial.ipynb\E$
+^\Qnotebooks/PowerSpectrumWFE_Demo.ipynb\E$
+^\Qnotebooks/Propagation through turbulent atmosphere.ipynb\E$
+^\Qnotebooks/Shack Hartmann Wavefront Sensor Demo.ipynb\E$
+^\Qnotebooks/Thermal Blooming Demo.ipynb\E$
+^\Qnotebooks/ThinLens_ZernikeWFE_and_ParameterizedWFE.ipynb\E$
+^\Qpoppy/tests/FITSFPMElement_test_result.fits\E$
+^\Qpoppy/tests/psd_wfe_ref_oap.fits\E$
+^\Qrequirements.txt\E$
+^\Qtox.ini\E$
