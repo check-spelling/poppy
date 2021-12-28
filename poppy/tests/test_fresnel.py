@@ -589,7 +589,7 @@ def test_fresnel_return_complex():
     # physical radius values
     M1_radius = 3. * u.m
     fl_M1 = M1_radius/2.0
-    # intermediary distances
+    # intermediate distances
 
     tel = fresnel.FresnelOpticalSystem(pupil_diameter=2.4*u.m)
     gl=fresnel.QuadraticLens(500*u.cm)
@@ -771,7 +771,7 @@ def test_CompoundOpticalSystem_hybrid(npix=128):
     # First part is Fraunhofer then second is Fresnel
     osys1 = poppy.OpticalSystem(npix=128, oversample=4, name="FIRST PART, FRAUNHOFER")
     # Note for strict consistency we need to apply a half pixel shift to optics in the Fraunhofer part;
-    # this accomodates the differences between different types of image centering.
+    # this accommodates the differences between different types of image centering.
     pixscl = osys.input_wavefront().pixelscale
     halfpixshift = (pixscl*0.5*u.pixel).to(u.m).value
     opt1shifted = poppy.SquareAperture(shift_x = halfpixshift, shift_y = halfpixshift)

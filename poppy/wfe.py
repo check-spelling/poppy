@@ -360,7 +360,7 @@ class StatisticalPSDWFE(WavefrontError):
 
 class PowerSpectrumWFE(WavefrontError):
     r"""
-    WFE model specificed via a Power Spectral Density (PSD),
+    WFE model specified via a Power Spectral Density (PSD),
     or a list of multiple PSDs, which follow von Karman PSD model:
     
     :math:`P(k) = \frac{\beta} {\left( \left(\frac{1}{L_{0}}\right)^{2} + |k|^{2} \right)^{{\alpha/2}}} e^{-(|k|l_{0})^{2}} + \beta_{sr}`
@@ -416,7 +416,7 @@ class PowerSpectrumWFE(WavefrontError):
             surf_roughness: astropy quantity
                 Surface roughness normalization. Should match units of PSD.
     psd_weight: iterable list of floats
-        Specifies the weight muliplier to set onto each model PSD
+        Specifies the weight multiplier to set onto each model PSD
     seed : integer
         Seed for the random phase screen generator
     apply_reflection: boolean
@@ -533,20 +533,20 @@ class PowerSpectrumWFE(WavefrontError):
                 # calculate PSD as normal
                 psd_denom = (k_map**2)**(alpha/2)
                 # calculate the immediate PSD value
-                psd_interm = (beta.value*np.exp(-((k_map*inner_scale)**2))/psd_denom)
+                psd_interim = (beta.value*np.exp(-((k_map*inner_scale)**2))/psd_denom)
                 # overwrite PSD at k=0 to be 0 instead of the original infinity
-                psd_interm[cen][cen] = 0
+                psd_interim[cen][cen] = 0
                 # return k_map to original state
                 k_map[cen][cen] = 0
             else:
                 psd_denom = ((outer_scale.value**(-2)) + (k_map**2))**(alpha/2) # unitless currently
-                psd_interm = (beta.value*np.exp(-((k_map*inner_scale)**2))/psd_denom)
+                psd_interim = (beta.value*np.exp(-((k_map*inner_scale)**2))/psd_denom)
             
             # apply surface roughness
-            psd_interm = psd_interm + surf_roughness.value
+            psd_interim = psd_interim + surf_roughness.value
             
             # apply as the sum with the weight of the PSD model
-            psd = psd + (self.psd_weight[n] * psd_interm) # this should all be m2 [surf_unit]2, but stay unitless for all calculations
+            psd = psd + (self.psd_weight[n] * psd_interim) # this should all be m2 [surf_unit]2, but stay unitless for all calculations
         
         # set the random noise
         psd_random = np.random.RandomState()
